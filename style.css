@@ -4,5 +4,8 @@
 
 /*----------------------------------------------- HEADER / ENTETE - PAR DEFAUT - PC DESKTOP FIRST ----------------------------------------------------*/
 
-
-
+.parent_logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
