@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.location_pick{
+    display: flex;
+    justify-content: space-around;
+}
