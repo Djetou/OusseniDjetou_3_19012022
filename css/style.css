@@ -10,6 +10,21 @@ body{
     font-family: "Roboto", sans-serif;
 }
 
+body::before{
+    font-family: "Source code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid sans Mono", monospace, monospace;
+    white-space: pre;
+    display: block;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid black;
+
+
+}
+
+main{
+    padding: 0 1rem;
+}
+
 header{
 
     display: flex;
@@ -75,6 +90,85 @@ header{
 }
 
 .fonctionnement_steps{
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
     align-items: center;
+    counter-reset: steps;
+}
+
+@media (max-widht : 767px){
+    .fonctionnement_steps{
+        flex-direction: column;
+    }
+}
+
+@media (max-widht: 800px){
+.fonctionnement_steps{
+    flex-direction: column;
+}
+}
+
+
+.fonctionnement_steps li{
+    position: relative;
+    list-style-type: none;
+    background-color: #F3F3F3;
+    border-radius: 1rem;
+    flex-grow: 1;
+    box-shadow:2px 1px 8px #000000;
+    padding: 1rem 2rem;
+}
+
+.fonctionnement_steps li::before{
+    content: counter(steps);
+    counter-increment: steps;
+    color: white;
+    background-color: #9356dc;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: -1rem;
+}
+
+.fonctionnement_steps li:hover{
+    transform: scale(1.02);
+}
+
+.fonctionnement_steps li i.fas{
+    color: #7e7e7e;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.sec_restaurant{
+    background-color: #f6f6f6;
+}
+
+.sec_restaurant h2{
+    margin-bottom: 2rem;
+}
+
+.lien_carte_restaurant{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 2rem;
+}
+
+@media (max-widht: 767px){
+    .lien_carte_restaurant{
+        grid-template-columns: repeat(1fr);
+    }
+}
+
+.img_carte_restaurant{
+    height: 15rem;
+    flex-grow: 1;
+    min-width: 30rem;
+    background-size: cover;
 }
