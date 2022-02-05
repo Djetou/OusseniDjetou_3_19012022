@@ -25,6 +25,21 @@ main{
     padding: 0 1rem;
 }
 
+h2{
+    padding: 2rem 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h3,
+p{
+    margin: 0;
+}
+
 header{
 
     display: flex;
@@ -61,11 +76,6 @@ header{
 
 .hero{
     text-align: center;
-}
-
-.hero h2{
-    margin-top: 2rem;
-    font-size: 1.5rem;
 }
 
 .hero p{
@@ -150,25 +160,35 @@ header{
     background-color: #f6f6f6;
 }
 
-.sec_restaurant h2{
-    margin-bottom: 2rem;
-}
-
-.lien_carte_restaurant{
-    display: grid;
-    grid-template-columns: repeat(1fr);
+.sec_restaurant .lien_carte_restaurant{
+    grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
 }
 
 @media (max-widht: 767px){
-    .lien_carte_restaurant{
-        grid-template-columns: repeat(1fr);
+    .sec_restaurant .lien_carte_restaurant{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
-.img_carte_restaurant{
+.sec_restaurant .img_carte_restaurant{
     height: 15rem;
     flex-grow: 1;
     min-width: 30rem;
     background-size: cover;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.sec_restaurant .description_card h3,
+p{
+    margin: 0.5rem;
+}
+
+.sec_restaurant .description_card i{
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 25%;
+    transform: translate(-25%);
 }
