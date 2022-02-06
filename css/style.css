@@ -158,6 +158,10 @@ header{
 
 .sec_restaurant{
     background-color: #f6f6f6;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /*justify-content: space-between;*/
 }
 
 .sec_restaurant .lien_carte_restaurant{
@@ -189,6 +193,6 @@ p{
     font-size: 2rem;
     position: absolute;
     right: 1rem;
-    top: 25%;
+    /*top: 25%;*/
     transform: translate(-25%);
 }
