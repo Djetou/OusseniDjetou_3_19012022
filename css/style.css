@@ -269,3 +269,19 @@ card*/
       text-align: center;
     }
   }
+
+  /*------------------------------------------RESTO_1------------------------------------------*/
+
+  .pr_main {
+    margin-top: -30px;
+    position: relative;
+    border-radius: 30px 30px 0 0;
+    background-color: #F3F3F3;
+    padding: 35px 15px 80px 15px;
+  }
+  .pr_main__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+  }
