@@ -101,24 +101,23 @@ header{
 
 .fonctionnement_steps{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
     counter-reset: steps;
 }
 
-/*992 flex-direction: row*/
 
-@media (max-widht : 767px){
+@media (min-widht : 767px){
     .fonctionnement_steps{
         flex-direction: column;
     }
 }
 
-@media (max-widht: 800px){
+@media (mmin-widht: 992px){
 .fonctionnement_steps{
-    flex-direction: column;
+    flex-direction: row;
 }
 }
 
@@ -133,6 +132,9 @@ header{
     padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
+}
+.fonctionnement_steps i{
+    text-align: center;
 }
 
 /*min-widht 992
@@ -166,43 +168,104 @@ card*/
     font-size: 1.5rem;
 }
 
-.sec_restaurant{
-    background-color: #f6f6f6;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /*justify-content: space-between;*/
-}
-
-.sec_restaurant .lien_carte_restaurant{
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-}
-
-@media (max-widht: 767px){
-    .sec_restaurant .lien_carte_restaurant{
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.sec_restaurant .img_carte_restaurant{
-    height: 15rem;
-    flex-grow: 1;
-    min-width: 30rem;
-    background-size: cover;
-    border-radius: 1rem;
+.restaurants {
+    padding: 55px 20px 45px 20px;
+    background-color: #F3F3F3;
+  }
+  .restaurants__title {
+    margin-bottom: 30px;
+  }
+  .restaurants__card {
+    position: relative;
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #c4c3c0;
+  }
+  .restaurants__card__img {
+    display: block;
+    max-height: 175px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
     object-fit: cover;
-}
+  }
+  .restaurants__card__txt {
+    padding: 20px 15px 20px 15px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-.sec_restaurant .description_card h3,
-p{
-    margin: 0.5rem;
-}
-
-.sec_restaurant .description_card i{
-    font-size: 2rem;
+  .badge_new {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 80px;
+    background-color: #99E2D0;
+    color: #008766;
     position: absolute;
-    right: 1rem;
-    /*top: 25%;*/
-    transform: translate(-25%);
+    right: 10px;
+    top: 15px;
+  }
+
+  .footer {
+    background-color: #353535;
+    padding: 25px;
+  }
+
+  .footer__logo {
+    font-size: 24px;
+    font-family: "Shrikhand", sans-serif;
+    color: white;
+    margin-bottom: 15px;
 }
+
+.footer__txt {
+    color: white;
+  }
+  .footer__icons {
+    margin-right: 10px;
+  }
+  .footer__list {
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: 767px) {
+    .container {
+      width: 75%;
+      margin: auto;
+    }
+  
+    h2 {
+      width: 75%;
+      margin: auto;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .container {
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
+      width: 100%;
+    }
+    .container__card {
+      width: 49%;
+    }
+  
+    h2, .footer__logo {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .container {
+      max-width: 75%;
+      margin: auto;
+    }
+  
+    h2 {
+      text-align: center;
+    }
+  }
