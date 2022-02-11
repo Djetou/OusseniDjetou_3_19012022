@@ -1,317 +1,647 @@
-*,
-::before
-::after{
-    box-sizing: border-box; 
-    font-family: 'Raleway', sans-serif;
+/*Sauvegarde  du css en vue de réutilisation comprise 
+header{} Non utilisé: c'est le conteneur principal du logo et de la localisation
+.titres_entetes{} section contenant de réservez à nos restaurants.
+.fonctionnement{} section contenant les étapes 1,2 et 3
+.restaurants{} section contenant les cartes des restaurants
+*/
+*{
+    font-family: "Roboto", "Shrickhand",sans-serif;
+    box-sizing: border-box;
 }
-
-body{
-    margin: 0;
-    font-family: "Roboto", sans-serif;
+html{
+    font-size: 14px;
 }
-
-body::before{
-    font-family: "Source code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid sans Mono", monospace, monospace;
-    white-space: pre;
-    display: block;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-bottom: 2px solid black;
-
-
-}
-
-main{
-    padding: 0 1rem;
-}
-
-h2{
-    padding: 2rem 0;
-    margin: 0;
-}
-
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-h3,
-p{
-    margin: 0;
-}
-
-header{
-
-    display: flex;
-    justify-content: space-around;
-    /*box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);*/
-    padding: 1.5rem;
-    margin: 0;
-    position: relative;
-    top: -8px;
-}
-
-.location_pick{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background-color: #F3F3F3;
-    padding: 1rem;
-   /* margin: -8px;*/
-}
-.location_pick i{
-    font-size: 1.8em;
-}
-
-.hero_title{
-    display: flex;
-    justify-content: center;
-}
-
-.hero_description{
-    display: flex;
-    justify-content: center;
-}
-
-.hero{
-    text-align: center;
-    padding: 20px;
-}
-
-.hero p{
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.hero button{
-    color: white;
-    font-weight: 200;
-    font-size: 1rem;
-    padding: 1rem 2rem;
-    border: none;
-    background-image: linear-gradient(to top, rgb(147, 86, 220, 0.9),rgb(255, 121, 218, 0.9));
-    box-shadow:2px 1px 16px -3px #000000;
-    border-radius: 2rem;
-    margin-top: 0.5rem;
-}
-
-.hero button:hover{
-    transform: scale(1.02);
-    opacity: 0.9;
-}
-
-.fonctionnement_steps{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    counter-reset: steps;
-}
-
-
-.fonctionnement_steps li{
-    position: relative;
-    list-style-type: none;
-    background-color: #F3F3F3;
-    border-radius: 1rem;
-    flex-grow: 1;
-    box-shadow:2px 1px 8px #000000;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* Mise en page de l'entête */
+.entete-de-page{
     width: 100%;
-  }
-
-.fonctionnement_steps i{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
 }
-
-@media (mmin-width: 992px){
-  .fonctionnement_steps li{
-    width: 25%;
-  }
+.conteneur-logo{
+    padding: 1vw;
 }
-/*min-widht 992
-widht 25%, justify-content:center
-card*/
-
-
-
-.fonctionnement_steps li::before{
-    content: counter(steps);
-    counter-increment: steps;
-    color: white;
-    background-color: #9356dc;
-    width: 2rem;
-    height: 2rem;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    position: absolute;
-    top: 25%;
-    left: -1rem;
+.logotype{
+    width: 300px;
 }
-
-.fonctionnement_steps li:hover{
-    transform: scale(1.02);
+.localisation{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3d3d3;
 }
-
-.fonctionnement_steps li i.fas{
-    color: #7e7e7e;
-    margin-right: 1rem;
+.pointe{
     font-size: 1.5rem;
+    padding: 0.25rem 1rem 1rem 1rem;
+    margin: 1.5rem;
 }
-
-@media (min-width : 767px){
-  .fonctionnement_steps{
-      flex-direction: column;
-  }
+.lieu{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
-
-@media (mmin-width: 992px){
-.fonctionnement_steps{
-  flex-direction: row;
-}
-}
-
-.delay1 {
-  animation-delay: 0.1s;
-}
-
-.delay2 {
-  animation-delay: 0.3s;
-}
-
-.delay3 {
-  animation-delay: 0.6s;
-}
-
-.delay4 {
-  animation-delay: 0.9s;
-}
-
-.restaurants {
-    padding: 55px 20px 45px 20px;
-    background-color: #F3F3F3;
-  }
-  /*.restaurants__title {
-    margin-left: 41%;
-}*/
-
-  .restaurants__card {
-    position: relative;
-    height: 250px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px #c4c3c0;
-  }
-  .restaurants__card__img {
-    display: block;
-    max-height: 175px;
+/* Mise en page des titres */
+.titres_entetes{
+    padding-bottom: 2rem;
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.titre{
+    text-align: center;
+}
+.titre-section1{
+    padding-bottom: 0rem;
+}
+.titre-secondaire{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;   
+}
+.sous-titre{
+    font-size: 1.25rem;
+    font-weight: 300;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.explorer{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    margin: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 500;
+    font-size: 1.25rem;
+    cursor: pointer;
+    background:linear-gradient(#ff79da,#9356dc);
+    border-radius: 60px;
+    transition-duration:0.25s ;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0,0,0,0.25);
+ 
+}
+.explorer:hover{
+    background-color:whitesmoke;
+    box-shadow:0.30rem 0.30rem 15px rgba(0,0,0,0.7);
+}
+.fonctionnement{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+h2{
+    font-size: 2rem;
+   
+}
+.choix-restau{
+    width: 100%;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    counter-reset: mon_compteur ; /* initialisation du compteur pour les éléments de la liste ordonée */
+}
+.titre-section{
+    text-align: left;
+    padding-left: 1rem;
+}
+.elt-de-liste{
+    /* ici l'element de la liste est mis en forme */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color:whitesmoke;
+    text-decoration:none;
+    box-shadow: 5px 5px 15px rgba(128, 128, 128,0.5);
+    margin-bottom: 2.5rem;
+    margin-right: 2rem;
+    list-style-type: none; /* on retire le style par défaut de l'element ol */
+    counter-increment: mon_compteur; /*incrémentation du compteur pour chaque element de liste */
+    border-radius: 20px; 
+    cursor: pointer;
+}
+.elt-de-liste::before{   /* création du pseudo element ::before afin de générer les numéros grâce au compteur*/
+    display: flex;   /* par défaut inline, on le passe à flex pour avoir des dimensions à fixer et le centrage facile  */ 
+    justify-content: center;
+    align-items: center;
+    content: counter(mon_compteur);  /* affichage du numéro représenté par le nombre contenu dans le compteur */
+    width: 40px; 
+    height: 40px;
+    background-color:#9356dc;
+    border-radius: 100%;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: white;
+    margin-left: -20px;
+}
+.elt-de-liste:hover{
+    box-shadow: 10px 10px 10px rgba(128, 128, 128,0.5);
+ }
+ .choix-restau .elt-de-liste:last-child{
+    background-color: rgba(147, 86, 220,0.15);
+ }
+ .elt-liste{
+    text-decoration:none;
+ }
+ .elt-fonctionnement{
+    /* une div contenant l'icone et le texte dans un paragraphe */   
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.material-icons{
+    /* les icones de google, l'iphone et la liste*/
+    
+font-size: 1.25rem;
+padding-left: 10px;
+padding-right:10px;
+color: grey;
+}
+.fonction{
+    /* le paragraphe contenant le texte de l'element du fonctionnement */
+padding-left: 10px;
+padding-right: 10px;
+color: black;
+font-size: 1.25rem;
+font-family: roboto;
+font-weight: 500;
+}
+.fa-store{
+    /* l'icone fontawesome du restau */
+font-size: 1.25rem;
+padding-left: 10px;
+padding-right:10px;
+color:#9356dc;
+}
+
+
+.restaurants{
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    background-color: whitesmoke; 
+    padding-bottom: 5rem;
+}
+.lien-carte-resto{
+   /* display: block;   toujours pour des raisons de dimensions à créér*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-decoration:none; /*toujours pour enlever le soulignement par défaut des ancres  <a>*/
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 2rem;
+}
+.carte-resto{ 
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 1rem;
+    border-radius: 30px;
+    box-shadow: 15px 15px 35px rgba(128, 128, 128,0.5);
+}
+.conteneur-photo-resto{
+    width: 100%;
+    border-radius: 30px;  
+    
+}  
+.image { 
+    width: 100%; /* pour appliquer object-fit, la width doit être définie sur l'image*/
+    height: 12rem;
     object-fit: cover;
-  }
-  .restaurants__card__txt {
-    padding: 20px 15px 20px 15px;
+}
+.photo-resto{
+    max-width:100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;    
+} 
+.etiquette{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #99e2d0;
+    color: green;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-family: roboto;
+}
+/* Début mise en forme tablette index.html */
+@media screen and (min-width:769px) {
+    .explorer{
+        max-width: 50%;
+        padding: 15px 50px 15px 50px;
+        margin: auto;
+    }
+    .choix-restau{
+       flex-flow: row nowrap;
+       flex: 1 0 30%;
+    }
+    .elt-de-liste::before{
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+    .titre-sectionR{
+        width: 100%;
+    }
+    .lien-carte-resto{
+        width: 50%;
+    }
+    .restaurants{
+        flex-flow: row wrap;
+        
+    }
+}
+/* Fin  mise en forme tablette index.html */
+
+
+.les-infos-resto{
     display: flex;
     justify-content: space-between;
-  }
-
-  .heart {
-    font-size: 20px;
-    color: grey;
-  }
-  .heart:hover {
-    animation: fill 1s ease-out;
-    background: linear-gradient(#FF79DA, #9356DC);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-  }
-
-  .badge_new {
-    display: inline-block;
+    margin:0 2rem 0 0;
+}
+.infos-resto{
+    list-style-type: none;
+   
+}
+.nom-resto{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: black;
+    padding-bottom: 0.5rem;
+}
+.lieu-resto{
+    color: black;
+    font-family: roboto;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.far{
+    color: black;
+}
+.accueil-com{
+    height: 2rem;
+    width:2rem;
+    border: 0 solid transparent;
+    padding:0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 30px;
-    width: 80px;
-    background-color: #99E2D0;
-    color: #008766;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color:black;
+}
+.accueil-com:hover::before{
+    opacity: 1;
+}
+.accueil-com::before{
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(0deg,#9356dc,#ff79da);
+}
+.accueil-com::before,.com-accueil{
     position: absolute;
-    right: 10px;
-    top: 15px;
-  }
-
-  .footer {
-    background-color: #353535;
-    padding: 25px;
-  }
-
-  .footer__logo {
-    font-size: 24px;
-    font-family: "Shrikhand", sans-serif;
-    color: white;
-    margin-bottom: 15px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.accueil-com:hover .accueil-sans{
+    opacity: 0;
+}
+.com-accueil{
+    transition-duration: .25s;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: lighten;
 }
 
-.footer__txt {
+.pied-de-page{
+    width: 100%;
+    margin-top: 0rem;
+    background-color:#353535;
+
+}
+.conteneur-pdp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+}
+.logo-pdp{
+    display: block;
     color: white;
-  }
-  .footer__icons {
-    margin-right: 10px;
-  }
-  .footer__list {
-    margin-bottom: 10px;
-  }
-
-  @media screen and (min-width: 767px) {
-    .container {
-      width: 75%;
-      margin: auto;
+    font-family: 'shrikhand', 'cursive';
+    padding-top:1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+}
+.liste-pdp{
+    list-style: none;
+    padding-top:1rem;
+    margin: 0;
+}
+.elt-liste-pdp{
+    margin: 0.5rem;
+    font-size: 1rem;
+}
+.elt-liste-pdp:first-child{
+    margin-top: 0;
     }
+.elt-liste-pdp:last-child{
+margin-bottom: 2rem;
+}
+.lien-pdp{
+    color: white;
+    text-decoration: none;
+}
+.lien-pdp:hover{
+    text-decoration: underline;
+}
+.icone-pdp{
+    color: white; 
+    width: 1.2rem;
   
-    h2 {
-      width: 75%;
-      margin: auto;
-    }
-  }
-  @media screen and (min-width: 992px) {
-    .container {
-      display: flex;
-      justify-content: space-around;
-      margin: 0;
-      width: 100%;
-    }
-    .container__card {
-      width: 49%;
-    }
   
-    h2, .footer__logo {
-      width: 100%;
-      margin: 0;
     }
-  }
-
-  @media screen and (min-width: 992px) {
-    .container {
-      /*max-width: 75%;*/
-      margin: auto;
+.titre-pdp{
+        font-family: shrikhand;
+        padding-top:3rem;
+        margin: 3rempx;
+        color:white;
+}
+.liste-pied-de-page{
+        list-style-type: none;
+        line-height: 2em;
     }
-  
-    h2 {
-      text-align: center;
-    }
-  }
-
-  /*------------------------------------------RESTO_1------------------------------------------*/
-
-  .pr_img {
-    max-height: 250px;
+/* Mise en page des menus */
+.entete_menus{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.fleche{
+    font-size: 2rem;
+    color: black;
+    position: absolute;
+    left: 0.5rem; 
+}
+.photo-menu{
+    max-width: 100%;
+    max-height: 35rem;
     width: 100%;
     object-fit: cover;
+}
+.menus{
+    margin-top: -5rem;
+    border-radius: 30px;
+    background-color:#f6f6f6 ;
+    z-index: 1;
+    position: relative;
+}
+.entete-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem 0 1rem;
+}
+.titre-menu{
+    font-family: shrikhand,cursive;
+}
+.menu-com{
+    height: 2rem;
+    width:2rem;
+    border: 0 solid transparent;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color:black;
+} 
+.menu-com:hover::before{
+    opacity: 1;
+} 
+.menu-com::before{
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(0deg,#9356dc,#ff79da);
+} 
+.menu-com::before,.com-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.menu-com:hover .menu-sans{
+    opacity: 0;
+}
+.com-menu{
+    transition-duration: .25s;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*mix-blend-mode: lighten;*/
+} 
+.sous-menus{
+    display: grid;
+}
+.sous-menu{
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+.titre-sous-menu{
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: normal;
+}
+.titre-sous-menu::after{
+    content: "";
+    width: 3rem;
+    height: 0.25rem;
+    background-color: #99e2d0;
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+/* Début Règles @keyframes pour le contrôle de l'animation */
+@keyframes apparition-elt {
+    0% {
+        transform: scale(0)
+      }
+      100% {
+        transform: scale(1);
+      }
+    
+}
+/* Fin règle @keyframes pour le contrôle de l'animation */
+
+.eltmenu{
+    background-color: white;
+    padding:1rem;
+    display: flex;
+    border-radius: 0.75rem;
+    margin: 1rem 0;
+    box-shadow: 0.25rem 0.25rem 1re rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    animation:apparition-elt .6s;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    animation-fill-mode: both;
+    transform: scale(0);
+    max-width: 100%;
+}
+.entete-eltmenu{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+}
+.titre-eltmenu{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.detail-eltmenu{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.prix-eltmenu{
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-left: 0.5rem;
+}
+.elt-menu-cocher{
+    background-color: #99e2d0;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition-duration: 0.5s;
+}
+.eltmenu:hover .elt-menu-cocher{
+    margin-right: -1rem;
+}
+.conteneur-icone{
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 100px;
+    transform: rotate(180deg);
+    transition-duration: 0.5s;
+}
+
+.eltmenu:hover .conteneur-icone{
+    transform: rotate(0);
+}
+.icone-eltmenu{
+    color: #99e2d0;
+}
+
+.delai-0{
+    animation-delay: 0s; 
+}
+.delai-1{
+    animation-delay: 0.1s; 
+}
+.delai-2{
+    animation-delay: 0.2s; 
+}
+.delai-3{
+    animation-delay: 0.3s; 
+}
+.delai-4{
+    animation-delay: 0.4s; 
+}
+.delai-5{
+    animation-delay: 0.5s; 
+}
+.delai-6{
+    animation-delay: 0.6s; 
+}
+.delai-7{
+    animation-delay: 0.7s; 
+}
+.delai-8{
+    animation-delay: 0.8s; 
+}
+
+.ibaro-bouton{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.commandBtn{
+    border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: #686868;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  background:linear-gradient(#ff79da,#9356dc);
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.commandBtn:hover {
+    background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+.commandBtn a {
+    text-decoration: none;
+    color: inherit;
+    
   }
+/*Fin  mise en page des menus */
+/* Début mise en forme tablette les pages des menus */
+@media screen and (min-width:769px) {
+    .sous-menus{
+        display: flex;
+        justify-content: space-around;
+    }
+    .commandBtn{
+        padding:1rem 2rem 1rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+/* Fin mise en forme tablette les pages menus */
+ 
