@@ -21,15 +21,33 @@ html{
     inset: 0;
     z-index: 1;
     opacity: 0.9;
-    animation: disappear 200ms 3s forwards;
+    animation: disappear 200ms 4s forwards;
     transform-origin: top;
 }
 
+.loader::after{
+    content:"";
+    height: 100px;
+    width: 100px;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #9356dc;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out;
+    animation-iteration-count: 4;
+}
+
 @keyframes disappear{
-    to{
+    to {
         transform: scale(0);
     }
 }
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 /* Mise en page de l'entête */
 .entete-de-page{
     width: 100%;
