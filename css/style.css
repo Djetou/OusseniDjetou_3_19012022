@@ -11,6 +11,25 @@ header{} Non utilisé: c'est le conteneur principal du logo et de la localisatio
 html{
     font-size: 14px;
 }
+/*loader*/
+.loader{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #ffffff;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: disappear 200ms 3s forwards;
+    transform-origin: top;
+}
+
+@keyframes disappear{
+    to{
+        transform: scale(0);
+    }
+}
 /* Mise en page de l'entête */
 .entete-de-page{
     width: 100%;
