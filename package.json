@@ -1,0 +1,20 @@
+{
+  "name": "p3_ousseni_djetou",
+  "version": "1.0.0",
+  "description": "P3",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Djetou/OusseniDjetou_3_19012022.git"
+  },
+  "author": "OUSSENI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Djetou/OusseniDjetou_3_19012022/issues"
+  },
+  "homepage": "https://github.com/Djetou/OusseniDjetou_3_19012022#readme"
+}
