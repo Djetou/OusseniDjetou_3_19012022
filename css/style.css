@@ -351,7 +351,7 @@ color:grey /*#9356dc*/;
     font-size: 1.4em;
   }
   .restos_grp_carte_infos_container-coeurs_coeur-plein {
-    position: absolute;
+   /* position: absolute;*/
     font-size: 1.2em;
     top: 22px;
     color: white;
@@ -367,6 +367,10 @@ color:grey /*#9356dc*/;
     color: transparent;
     cursor: pointer;
   }
+
+  /*.restos_grp_carte_infos_container-coeurs_contour-coeur .titre_menu{
+      top: -16px;
+  }*/
 
 .pied-de-page{
     width: 100%;
