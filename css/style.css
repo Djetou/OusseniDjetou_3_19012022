@@ -181,7 +181,7 @@ h2{
     box-shadow: 10px 10px 10px rgba(128, 128, 128,0.5);
  }
  .choix-restau .elt-de-liste:last-child{
-    background-color: whitesmoke /*rgba(147, 86, 220,0.15);*/
+    background-color: rgba(147, 86, 220,0.15);
  }
  .elt-liste{
     text-decoration:none;
@@ -218,7 +218,7 @@ font-weight: 500;
 font-size: 1.25rem;
 padding-left: 10px;
 padding-right:10px;
-color:grey /*#9356dc*/;
+color: #9356dc;
 }
 
 
